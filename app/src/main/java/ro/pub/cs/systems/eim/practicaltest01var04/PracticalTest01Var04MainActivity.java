@@ -1,9 +1,12 @@
 package ro.pub.cs.systems.eim.practicaltest01var04;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -106,6 +109,14 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == Constants.SECONDARY_ACTIVITY_REQUEST_CODE) {
             Toast.makeText(this, "The activity returned with result " + resultCode, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private MessageBroadcastReceiver messageBroadcastReceiver = new MessageBroadcastReceiver();
+    private class MessageBroadcastReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("MY_MESSAGE_RECIEVAR", intent.getStringExtra("mesaj"));
         }
     }
 }

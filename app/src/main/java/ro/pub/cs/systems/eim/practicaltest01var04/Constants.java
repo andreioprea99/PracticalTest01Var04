@@ -9,4 +9,8 @@ public class Constants {
     final public static String nameKey = "nameK";
     final public static String groupKey = "groupK";
     final public static int SECONDARY_ACTIVITY_REQUEST_CODE = 7;
+    final public static String[] actionTypes = {
+            "ro.pub.cs.systems.eim.practicaltest01var04.name",
+            "ro.pub.cs.systems.eim.practicaltest01var04.group"
+    };
 }
