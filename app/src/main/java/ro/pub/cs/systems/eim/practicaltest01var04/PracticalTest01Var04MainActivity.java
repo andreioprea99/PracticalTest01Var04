@@ -46,12 +46,20 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
                     }
                 }
                 informationTextView.setText(name + " " + group);
+                if (name != "" && group != "") {
+                    Intent intent = new Intent(getApplicationContext(), PracticalTest01Var04SecondaryActivity.class);
+                    intent.putExtra(Constants.nameKey, name);
+                    intent.putExtra(Constants.groupKey, group);
+                    getApplicationContext().startService(intent);
+                }
             } else {
                 Intent intent = new Intent(getApplicationContext(), PracticalTest01Var04SecondaryActivity.class);
                 intent.putExtra(Constants.nameKey, nameEditText.getText().toString());
                 intent.putExtra(Constants.groupKey, groupEditText.getText().toString());
                 startActivityForResult(intent, Constants.SECONDARY_ACTIVITY_REQUEST_CODE);
             }
+
+
         }
     }
 
@@ -118,5 +126,12 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             Log.d("MY_MESSAGE_RECIEVAR", intent.getStringExtra("mesaj"));
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        Intent intent = new Intent(this, PracticalTest01Var04Service.class);
+        stopService(intent);
+        super.onDestroy();
     }
 }
