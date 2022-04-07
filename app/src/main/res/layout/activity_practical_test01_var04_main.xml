@@ -27,12 +27,14 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:saveEnabled="false"
                 android:id="@+id/firstCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0" />
 
             <EditText
+                android:saveEnabled="false"
                 android:id="@+id/firstEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,12 +50,14 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:saveEnabled="false"
                 android:id="@+id/secondCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0" />
 
             <EditText
+                android:saveEnabled="false"
                 android:id="@+id/secondText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,6 +78,7 @@
             />
 
         <TextView
+            android:saveEnabled="false"
             android:id="@+id/informationTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

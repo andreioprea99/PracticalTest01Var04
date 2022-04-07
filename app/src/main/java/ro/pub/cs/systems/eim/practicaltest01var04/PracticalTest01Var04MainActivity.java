@@ -1,5 +1,6 @@
 package ro.pub.cs.systems.eim.practicaltest01var04;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -59,5 +60,35 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
         informationTextView = findViewById(R.id.informationTextView);
 
         displayInformationButton.setOnClickListener(listener);
+
+        if (savedInstanceState != null) {
+            firstCheckbox.setChecked(savedInstanceState.getBoolean(Constants.nameCheckbox, false));
+            secondCheckbox.setChecked(savedInstanceState.getBoolean(Constants.groupCheckbox, false));
+            nameEditText.setText(savedInstanceState.getString(Constants.nameEditText, ""));
+            groupEditText.setText(savedInstanceState.getString(Constants.groupEditText, ""));
+            informationTextView.setText(savedInstanceState.getString(Constants.infoTextView, ""));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putBoolean(Constants.nameCheckbox, firstCheckbox.isChecked());
+        savedInstanceState.putBoolean(Constants.groupCheckbox, secondCheckbox.isChecked());
+        savedInstanceState.putString(Constants.nameEditText, nameEditText.getText().toString());
+        savedInstanceState.putString(Constants.groupEditText, groupEditText.getText().toString());
+        savedInstanceState.putString(Constants.infoTextView, informationTextView.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            firstCheckbox.setChecked(savedInstanceState.getBoolean(Constants.nameCheckbox, false));
+            secondCheckbox.setChecked(savedInstanceState.getBoolean(Constants.groupCheckbox, false));
+            nameEditText.setText(savedInstanceState.getString(Constants.nameEditText, ""));
+            groupEditText.setText(savedInstanceState.getString(Constants.groupEditText, ""));
+            informationTextView.setText(savedInstanceState.getString(Constants.infoTextView, ""));
+        }
     }
 }
