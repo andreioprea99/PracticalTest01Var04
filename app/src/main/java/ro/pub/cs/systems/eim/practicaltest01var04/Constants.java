@@ -6,4 +6,7 @@ public class Constants {
     final public static String nameEditText = "nameET";
     final public static String groupEditText = "groupET";
     final public static String infoTextView = "infoTV";
+    final public static String nameKey = "nameK";
+    final public static String groupKey = "groupK";
+    final public static int SECONDARY_ACTIVITY_REQUEST_CODE = 7;
 }
