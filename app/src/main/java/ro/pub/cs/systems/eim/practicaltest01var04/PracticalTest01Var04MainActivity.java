@@ -47,7 +47,7 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
                 }
                 informationTextView.setText(name + " " + group);
                 if (name != "" && group != "") {
-                    Intent intent = new Intent(getApplicationContext(), PracticalTest01Var04SecondaryActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), PracticalTest01Var04Service.class);
                     intent.putExtra(Constants.nameKey, name);
                     intent.putExtra(Constants.groupKey, group);
                     getApplicationContext().startService(intent);

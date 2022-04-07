@@ -42,7 +42,7 @@ import java.util.Random;
 
         private void sleep() {
             try {
-                Thread.sleep(5000);
+                Thread.sleep(500);
             } catch (InterruptedException interruptedException) {
                 interruptedException.printStackTrace();
             }
